@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: employee
+    description: "Employee DBT Model"
+    columns:
+      - name: emp_id
+        data_tests:
+          - unique
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['1', '2', '3', '4', '5']
+                config:
+                  severity: warn 
+sources:
+  - name: emmployee
+    database: dbt_db
+    schema: public
+    tables:
+      - name: employee_raw
