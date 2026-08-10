@@ -68,3 +68,8 @@ sources:
     tables:
       - name: base_orders 
   
+  - name: patient 
+    database: dbt_db
+    schema: public  
+    tables:
+      - name: patient_src
