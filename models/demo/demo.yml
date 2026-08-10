@@ -13,7 +13,6 @@ models:
                 values: ['1', '2', '3', '4', '5']
                 config:
                   severity: warn 
-
       - name: emp_salary
         data_tests:
           - salary_check
@@ -27,6 +26,11 @@ models:
     description: "DBT model for product table"
   - name: purchase
     description: "DBT model for purchase table"
+  - name: clean_orders
+    description: "DBT model for clean orders"
+  - name: final_orders
+    description: "DBT model for final orders model"
+
 sources:
   - name: emmployee
     database: dbt_db
@@ -58,4 +62,9 @@ sources:
     tables:
       - name: purchase_src
 
+  - name: orders 
+    database: dbt_db
+    schema: public  
+    tables:
+      - name: base_orders 
   
