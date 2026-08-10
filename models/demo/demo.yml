@@ -13,12 +13,23 @@ models:
                 values: ['1', '2', '3', '4', '5']
                 config:
                   severity: warn 
+
       - name: emp_salary
         data_tests:
           - salary_check
+  - name: customer
+    description: "DBT model for customer table"
+  - name: customer_view
+    description: "DBT model for customer view"
 sources:
   - name: emmployee
     database: dbt_db
     schema: public
     tables:
       - name: employee_raw
+
+  - name: customer
+    database: dbt_db
+    schema: public
+    tables:
+      - name: customer_src
