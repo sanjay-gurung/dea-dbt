@@ -25,6 +25,8 @@ models:
     description: "DBT model for sales table"
   - name: product 
     description: "DBT model for product table"
+  - name: purchase
+    description: "DBT model for purchase table"
 sources:
   - name: emmployee
     database: dbt_db
@@ -49,3 +51,11 @@ sources:
     schema: public  
     tables:
       - name: product_src
+  
+  - name: purchase 
+    database: dbt_db
+    schema: public  
+    tables:
+      - name: purchase_src
+
+  
