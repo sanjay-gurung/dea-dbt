@@ -30,6 +30,8 @@ models:
     description: "DBT model for clean orders"
   - name: final_orders
     description: "DBT model for final orders model"
+  - name: session 
+    description: "DBT model for session table"
 
 sources:
   - name: emmployee
@@ -73,3 +75,9 @@ sources:
     schema: public  
     tables:
       - name: patient_src
+
+  - name: session  
+    database: dbt_db
+    schema: public  
+    tables:
+      - name: session_src
